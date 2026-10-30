@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Plan de mercadotecnia · La Barata</title>
+<style>
+  :root {
+    --brand: #B71A45;
+    --brand-dark: #8C1334;
+    --brand-soft: #FBEEF2;
+    --brand-softer: #FDF6F8;
+    --ink: #221B1E;
+    --ink-soft: #5E5458;
+    --ink-faint: #8A8085;
+    --line: #ECE4E7;
+    --bg: #F8F5F6;
+    --card: #FFFFFF;
+    --cool: #E6EEF7;
+    --cool-ink: #2F4A66;
+    --green: #1E7A4C;
+    --green-soft: #E8F5EE;
+    --radius: 14px;
+    --radius-sm: 8px;
+    --shadow-1: 0 1px 2px rgba(140, 19, 52, .06), 0 2px 8px rgba(140, 19, 52, .05);
+    --shadow-2: 0 4px 12px rgba(140, 19, 52, .08), 0 12px 32px rgba(140, 19, 52, .06);
+    --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px; line-height: 1.55;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 var(--s4); }
+  p { margin: 0 0 var(--s3); color: var(--ink-soft); max-width: 72ch; }
+  strong { color: var(--ink); font-weight: 600; }
+  code { font-family: ui-monospace, Menlo, monospace; font-size: .86em; background: var(--brand-soft); color: var(--brand-dark); padding: 1px 6px; border-radius: 6px; }
+
+  /* Portada */
+  .hero { background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%); color: #fff; padding: var(--s8) 0 var(--s7); }
+  .hero .eyebrow { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; opacity: .8; margin-bottom: var(--s3); }
+  .hero h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.1; margin: 0 0 var(--s4); font-weight: 700; letter-spacing: -.01em; }
+  .hero .lead { font-size: clamp(18px, 2.2vw, 22px); line-height: 1.45; max-width: 46ch; color: rgba(255,255,255,.92); margin: 0 0 var(--s5); }
+  .hero .meta { font-size: 14px; color: rgba(255,255,255,.75); max-width: 70ch; }
+  nav.toc { display: flex; flex-wrap: wrap; gap: var(--s2); margin-top: var(--s6); }
+  nav.toc a { color: #fff; text-decoration: none; font-size: 14px; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,.14); }
+  nav.toc a:hover { background: rgba(255,255,255,.26); }
+
+  /* Secciones */
+  section { padding: var(--s7) 0 var(--s4); }
+  .sec-head { display: flex; align-items: baseline; gap: var(--s3); margin-bottom: var(--s4); }
+  .sec-num { font-size: 14px; font-weight: 700; color: var(--brand); background: var(--brand-soft); border-radius: 999px; min-width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; flex: none; }
+  h2 { font-size: clamp(24px, 3vw, 30px); line-height: 1.2; margin: 0; font-weight: 700; color: var(--ink); }
+  h3 { font-size: 19px; line-height: 1.3; margin: var(--s6) 0 var(--s3); font-weight: 600; color: var(--ink); }
+  .intro { font-size: 17px; }
+
+  .card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow-1); padding: var(--s5); }
+  .grid { display: grid; gap: var(--s4); }
+  .g2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .g3 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .g4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+  /* La idea */
+  .idea { display: grid; gap: var(--s4); grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: var(--s5); }
+  .idea .card h4 { margin: 0 0 var(--s2); font-size: 16px; font-weight: 600; }
+  .idea .card p { margin: 0; font-size: 15px; }
+  .idea .icon { width: 36px; height: 36px; border-radius: 10px; background: var(--brand-soft); color: var(--brand); display: flex; align-items: center; justify-content: center; margin-bottom: var(--s3); }
+  .idea .icon svg { width: 20px; height: 20px; }
+
+  /* Datos */
+  .kpi { padding: var(--s4) var(--s5); }
+  .kpi .v { font-size: 26px; font-weight: 700; color: var(--ink); line-height: 1.15; }
+  .kpi .v small { font-size: 15px; font-weight: 600; color: var(--ink-soft); }
+  .kpi .l { font-size: 14px; color: var(--ink-soft); margin-top: var(--s1); }
+
+  /* Tablas */
+  .table-wrap { overflow-x: auto; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow-1); margin: var(--s3) 0 var(--s4); }
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+  th { text-align: left; font-weight: 600; font-size: 12.5px; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-faint); padding: var(--s3) var(--s4); border-bottom: 1px solid var(--line); background: var(--brand-softer); white-space: nowrap; }
+  td { padding: var(--s3) var(--s4); border-bottom: 1px solid var(--line); vertical-align: top; color: var(--ink-soft); }
+  td:first-child { color: var(--ink); font-weight: 600; }
+  tr:last-child td { border-bottom: 0; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  /* WhatsApp */
+  .wa-flow { display: grid; gap: var(--s3); grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); counter-reset: paso; }
+  .wa-step { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow-1); padding: var(--s4); position: relative; }
+  .wa-step .when { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--green); margin-bottom: var(--s2); display: flex; align-items: center; gap: 6px; }
+  .wa-step .when::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+  .bubble { background: var(--green-soft); border-radius: 12px 12px 12px 4px; padding: var(--s3); font-size: 14.5px; color: var(--ink); line-height: 1.45; }
+  .note { border-left: 3px solid var(--brand); background: var(--brand-softer); padding: var(--s3) var(--s4); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: var(--s4) 0; }
+  .note p { margin: 0; color: var(--ink); }
+  ul.clean { margin: 0 0 var(--s3); padding-left: 20px; color: var(--ink-soft); max-width: 78ch; }
+  ul.clean li { margin: var(--s2) 0; }
+  .weekly { display: grid; gap: var(--s3); grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+  .weekly .card { padding: var(--s4); }
+  .weekly .day { font-weight: 700; color: var(--brand); font-size: 14px; text-transform: uppercase; letter-spacing: .06em; }
+  .weekly p { margin: var(--s1) 0 0; font-size: 15px; }
+
+  /* Escalera */
+  .ladder { display: grid; gap: var(--s3); grid-template-columns: repeat(5, 1fr); align-items: end; margin: var(--s5) 0; }
+  .step { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow-1); padding: var(--s4); display: flex; flex-direction: column; }
+  .step .pct { font-size: 28px; font-weight: 800; line-height: 1; color: var(--brand); margin-bottom: var(--s2); }
+  .step .pct.muted { color: var(--ink-faint); font-size: 18px; font-weight: 700; }
+  .step h4 { margin: 0 0 var(--s2); font-size: 15.5px; font-weight: 600; }
+  .step p { margin: 0; font-size: 14px; }
+  .step .tag { margin-top: auto; padding-top: var(--s3); font-size: 12.5px; color: var(--ink-faint); }
+  .step.s1 { min-height: 190px; } .step.s2 { min-height: 220px; } .step.s3 { min-height: 250px; background: var(--brand-softer); }
+  .step.s4 { min-height: 280px; background: var(--brand-soft); } .step.s5 { min-height: 190px; background: #F3F1F2; }
+  .cost { display: grid; gap: var(--s3); grid-template-columns: 1fr 1fr; margin: var(--s4) 0; }
+  .cost .card { text-align: center; }
+  .cost .big { font-size: 40px; font-weight: 800; line-height: 1; }
+  .cost .bad .big { color: var(--ink-soft); }
+  .cost .good .big { color: var(--green); }
+  .cost .lbl { font-size: 14px; color: var(--ink-soft); margin-top: var(--s2); }
+
+  /* Tiendas */
+  .bar { display: flex; align-items: center; gap: var(--s2); justify-content: flex-end; }
+  .bar span.b { height: 8px; border-radius: 4px; background: var(--brand); display: inline-block; }
+  .zones { display: grid; gap: var(--s3); grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin: var(--s4) 0; }
+  .zones .card { padding: var(--s4); }
+  .zones .z { font-size: 14px; color: var(--ink-soft); }
+  .zones .t { font-size: 26px; font-weight: 700; }
+
+  /* Mapa de calor */
+  .heat td { text-align: center; font-variant-numeric: tabular-nums; font-size: 13.5px; padding: 10px 6px; color: var(--ink); font-weight: 500; }
+  .heat td:first-child { text-align: left; padding-left: var(--s4); white-space: nowrap; }
+  .heat th { text-align: center; padding: 10px 6px; }
+  .heat th:first-child { text-align: left; padding-left: var(--s4); }
+  .heat tr.group td { background: var(--card); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-faint); text-align: left; padding: var(--s3) var(--s4) var(--s1); font-weight: 600; }
+  .legend { display: flex; flex-wrap: wrap; gap: var(--s4); font-size: 13.5px; color: var(--ink-soft); margin: var(--s2) 0 var(--s4); }
+  .legend i { display: inline-block; width: 14px; height: 14px; border-radius: 4px; vertical-align: -2px; margin-right: 6px; }
+
+  /* Calendario */
+  .cal { display: grid; gap: var(--s3); }
+  .cal-item { display: grid; grid-template-columns: 170px 1fr 1fr; gap: var(--s4); background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow-1); padding: var(--s4) var(--s5); align-items: start; }
+  .cal-item .date { font-weight: 700; color: var(--brand); font-size: 15px; }
+  .cal-item .date small { display: block; font-weight: 500; color: var(--ink-faint); font-size: 13px; margin-top: 2px; }
+  .cal-item .what, .cal-item .wa { font-size: 15px; color: var(--ink-soft); }
+  .cal-item .wa { padding-left: var(--s4); border-left: 2px solid var(--green-soft); }
+  .cal-item .lab { display: block; font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 2px; }
+  .cal-item .what .lab { color: var(--ink-faint); }
+  .cal-item .wa .lab { color: var(--green); }
+  .cal-item.hot { box-shadow: inset 4px 0 0 var(--brand), var(--shadow-1); }
+
+  /* Roles, decisiones */
+  .role h4, .dec h4 { margin: 0 0 var(--s2); font-size: 16px; font-weight: 600; }
+  .role p, .dec p { margin: 0; font-size: 15px; }
+  .dec { position: relative; padding-left: 64px; }
+  .dec .n { position: absolute; left: var(--s5); top: var(--s5); width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--brand); color: var(--brand); font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; }
+  ol.build { margin: 0; padding-left: 22px; color: var(--ink-soft); }
+  ol.build li { margin: var(--s2) 0; }
+  .pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 999px; background: var(--green-soft); color: var(--green); vertical-align: 1px; }
+  .pill.todo { background: var(--brand-soft); color: var(--brand-dark); }
+
+  footer { padding: var(--s7) 0; color: var(--ink-faint); font-size: 13.5px; }
+
+  /* Menú fijo */
+  .topnav { position: sticky; top: 0; z-index: 10; background: rgba(248,245,246,.92); backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--line); }
+  .topnav .wrap { display: flex; gap: var(--s1); overflow-x: auto; padding-top: var(--s2); padding-bottom: var(--s2); scrollbar-width: none; }
+  .topnav .wrap::-webkit-scrollbar { display: none; }
+  .topnav a { flex: none; color: var(--ink-soft); text-decoration: none; font-size: 14px; padding: 6px 12px; border-radius: 999px; white-space: nowrap; }
+  .topnav a:hover { background: var(--brand-soft); color: var(--brand-dark); }
+  .topnav a.on { background: var(--brand); color: #fff; }
+  section { scroll-margin-top: 56px; }
+
+  /* Controles */
+  .tool { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow-2); padding: var(--s5); margin: var(--s4) 0; }
+  .tool-head { display: flex; align-items: center; gap: var(--s2); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--brand); margin-bottom: var(--s3); }
+  .tool-head svg { width: 18px; height: 18px; }
+  .field { display: grid; gap: var(--s2); margin-bottom: var(--s4); }
+  .field label { font-size: 14px; color: var(--ink-soft); display: flex; justify-content: space-between; gap: var(--s3); }
+  .field label b { color: var(--ink); font-weight: 700; font-variant-numeric: tabular-nums; }
+  input[type=range] { width: 100%; accent-color: var(--brand); height: 28px; }
+  .price-in { display: flex; align-items: center; gap: var(--s2); background: var(--brand-softer); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 0 var(--s3); max-width: 220px; }
+  .price-in span { color: var(--ink-faint); font-size: 20px; }
+  .price-in input { border: 0; background: transparent; font-size: 24px; font-weight: 700; color: var(--ink); width: 100%; padding: var(--s2) 0; outline: none; font-variant-numeric: tabular-nums; }
+  .chips { display: flex; flex-wrap: wrap; gap: var(--s2); margin-bottom: var(--s3); }
+  .chip { font: inherit; font-size: 14px; border: 1px solid var(--line); background: var(--card); color: var(--ink-soft); padding: 6px 14px; border-radius: 999px; cursor: pointer; min-height: 36px; }
+  .chip:hover { border-color: var(--brand); color: var(--brand-dark); }
+  .chip[aria-pressed=true] { background: var(--brand); border-color: var(--brand); color: #fff; }
+  .back-list { display: grid; gap: var(--s2); grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin-top: var(--s3); }
+  .back { border-radius: var(--radius-sm); padding: var(--s3); background: var(--brand-softer); }
+  .back .n { font-size: 13px; color: var(--ink-soft); }
+  .back .a { font-size: 22px; font-weight: 800; color: var(--brand); font-variant-numeric: tabular-nums; }
+  .back.off .a { color: var(--ink-faint); font-size: 16px; }
+  .cmp { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4); margin-top: var(--s2); }
+  .cmp .box { border-radius: var(--radius-sm); padding: var(--s4); text-align: center; }
+  .cmp .box.r { background: #F3F1F2; } .cmp .box.b { background: var(--green-soft); }
+  .cmp .big { font-size: 36px; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+  .cmp .r .big { color: var(--ink-soft); } .cmp .b .big { color: var(--green); }
+  .cmp .lbl { font-size: 13.5px; color: var(--ink-soft); margin-top: var(--s2); }
+  .verdict { margin-top: var(--s3); font-size: 15px; color: var(--ink); }
+  .store-card { display: grid; gap: var(--s4); grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin: var(--s3) 0; }
+  .store-card .m .v { font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .store-card .m .l { font-size: 13px; color: var(--ink-soft); }
+  .store-tips { margin: 0; padding-left: 20px; color: var(--ink-soft); }
+  .store-tips li { margin: var(--s2) 0; }
+  .heat th.mh { cursor: pointer; user-select: none; border-radius: 6px 6px 0 0; }
+  .heat th.mh:hover { color: var(--brand); }
+  .heat th.mh.sel { background: var(--brand); color: #fff; }
+  .heat td.sel { box-shadow: inset 2px 0 0 var(--brand), inset -2px 0 0 var(--brand); }
+  .month-out { background: var(--brand-softer); border-radius: var(--radius-sm); padding: var(--s3) var(--s4); margin-top: var(--s3); font-size: 15px; color: var(--ink); min-height: 48px; }
+  .cal-item[hidden] { display: none; }
+  .hint { font-size: 13.5px; color: var(--ink-faint); margin: 0 0 var(--s2); }
+  @media (max-width: 560px) {
+    .hero { padding: var(--s7) 0 var(--s6); }
+    .tool { padding: var(--s4); }
+    .cmp { grid-template-columns: 1fr; }
+    .cmp .big { font-size: 30px; }
+    .dec { padding-left: 56px; }
+    .dec .n { left: var(--s4); }
+    .card { padding: var(--s4); }
+  }
+  @media print {
+    .topnav, .tool, .no-print, .chips { display: none !important; }
+    .cal-item[hidden] { display: grid !important; }
+  }
+
+  @media (max-width: 860px) {
+    .ladder { grid-template-columns: 1fr; }
+    .step.s1, .step.s2, .step.s3, .step.s4, .step.s5 { min-height: 0; }
+    .cal-item { grid-template-columns: 1fr; gap: var(--s2); }
+    .cal-item .wa { padding-left: 0; border-left: 0; }
+    .cost { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    @page { size: Letter; margin: 14mm 12mm; }
+    body { background: #fff; font-size: 12.5px; }
+    .hero { padding: var(--s6) 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    nav.toc { display: none; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    section { padding-top: var(--s5); }
+    section.pb { break-before: page; }
+    .card, .wa-step, .step, .cal-item, .table-wrap, tr, .note { break-inside: avoid; }
+    .card, .wa-step, .step, .cal-item, .table-wrap { box-shadow: none; border: 1px solid var(--line); }
+    h2, h3, .sec-head { break-after: avoid; }
+    .ladder { grid-template-columns: repeat(5, 1fr); }
+    a { color: inherit; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">La Barata · Plan de mercadotecnia</div>
+    <h1>WhatsApp y barapesos</h1>
+    <p class="lead">Cada venta deja un cliente con WhatsApp y un saldo de barapesos que lo hace volver. Y dejamos de bajar precios: regresamos dinero en barapesos.</p>
+    <p class="meta">Plan del 29 de octubre de 2026. Datos de las tiendas T1 a T6 y T8 (T7 todavía no vendía; no se cuentan las ventas en línea): datos generales de los últimos 12 meses y temporadas de 2024 y 2025.</p>
+  </div>
+</header>
+<nav class="topnav" aria-label="Contenido">
+  <div class="wrap">
+    <a href="#idea">La idea</a><a href="#datos">Datos</a><a href="#whatsapp">WhatsApp</a><a href="#escalera">Escalera</a>
+    <a href="#tiendas">Tiendas</a><a href="#piso">En la tienda</a><a href="#temporadas">Temporadas</a><a href="#calendario">Calendario</a>
+    <a href="#equipo">Equipo</a><a href="#medicion">Medición</a><a href="#sistema">Sistema</a><a href="#decisiones">Decisiones</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="idea">
+  <div class="sec-head"><h2>La idea</h2></div>
+  <div class="idea">
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 20l1.3-5A8.4 8.4 0 1 1 21 11.5z"/></svg></div>
+      <h4>WhatsApp es el canal</h4>
+      <p>Es donde está el cliente, lo abre el mismo día y nos permite hablarle uno a uno.</p>
+    </div>
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></div>
+      <h4>Barapesos para volver</h4>
+      <p>Son la razón para dejar el número y la razón para regresar a la tienda.</p>
+    </div>
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div>
+      <h4>El precio no se mueve</h4>
+      <p>Se cuida el precio de marcas como PIRMA y Flexi, y el cliente no aprende a esperar la rebaja.</p>
+    </div>
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <h4>«Te regresamos $90»</h4>
+      <p>El 77 % de lo que se cobra en tienda es efectivo: regresar dinero se entiende y se antoja.</p>
+    </div>
+  </div>
+</section>
+
+<section id="datos">
+  <div class="sec-head"><h2>Datos que sostienen el plan</h2></div>
+  <div class="grid g4">
+    <div class="card kpi"><div class="v">7,000–17,000</div><div class="l">tickets al mes en tiendas, con 1.4 pares en promedio</div></div>
+    <div class="card kpi"><div class="v">$245 <small>a</small> $598</div><div class="l">ticket promedio: cambia mucho por zona y tienda</div></div>
+    <div class="card kpi"><div class="v">0 %</div><div class="l">de las ventas con cliente identificado: hoy no sabemos quién compra</div></div>
+    <div class="card kpi"><div class="v">+14–19 %</div><div class="l">venden los días 30 y 31; la quincena del 15 casi no se nota</div></div>
+    <div class="card kpi"><div class="v">41 %</div><div class="l">de la venta es en fin de semana; el jueves es el día más flojo (10 %)</div></div>
+    <div class="card kpi"><div class="v">48 %</div><div class="l">de la venta entre 12:00 y 15:59; la tarde cambia por tienda</div></div>
+    <div class="card kpi"><div class="v">Dama 47 %</div><div class="l">de los pares; Caballero 15 %, Niña 13 %, Niño 10 %</div></div>
+    <div class="card kpi"><div class="v">Barapesos</div><div class="l">casi todas las promociones recientes ya los daban: FLEXI 10 %, PIRMA, Buen Fin y Niño 10–20 %</div></div>
+  </div>
+</section>
+
+<section id="whatsapp" class="pb">
+  <div class="sec-head"><span class="sec-num">1</span><h2>WhatsApp: lo que recibe el cliente</h2></div>
+  <p class="intro">WhatsApp va primero porque todo lo demás depende de tener el número del cliente y de que abra lo que le mandamos.</p>
+
+  <h3>Registro: en cada venta</h3>
+  <div class="note"><p>El vendedor, al cerrar: <strong>«¿A qué WhatsApp te mando tus barapesos?»</strong> Se pide por el beneficio, no como trámite.</p></div>
+  <ul class="clean">
+    <li>Para ganar y usar barapesos hay que verificar el WhatsApp (el sistema ya lo exige). Cada oferta de la escalera es una razón para dejar el número.</li>
+    <li>Si no se registró, el ticket de preventa le dice «¡Te estás perdiendo $X en barapesos!» y la cajera lo lee en voz alta.</li>
+    <li>Bono de bienvenida al verificar (ya existe; se enciende con un monto).</li>
+    <li>Al registrarse se pregunta <strong>«¿Quieres recibir ofertas por WhatsApp?»</strong></li>
+    <li>Meta: <strong>25 %</strong> de las ventas con cliente registrado en diciembre y <strong>40 %</strong> en marzo. Con 17,000 ventas en diciembre, 25 % son unos 4,000 clientes en un mes.</li>
+  </ul>
+
+  <h3>Mensajes de su cuenta, a todos los registrados</h3>
+  <p>No son publicidad: son los más baratos en Meta y los que casi nadie bloquea. Construyen la costumbre de abrir lo que manda La Barata.</p>
+  <div class="wa-flow">
+    <div class="wa-step"><div class="when">Al verificar</div><div class="bubble">¡Bienvenida a La Barata! Te regalamos tus primeros barapesos. Así funcionan…</div></div>
+    <div class="wa-step"><div class="when">Al pagar</div><div class="bubble">Ganaste $175 en barapesos. Tu saldo: $310. Úsalos antes del 31 de enero en cualquier tienda La Barata. Aquí está tu ticket.</div></div>
+    <div class="wa-step"><div class="when">7 días después</div><div class="bubble">¿Cómo te quedaron tus zapatos? [Muy bien] [Más o menos] [Tengo un problema]</div></div>
+    <div class="wa-step"><div class="when">Al usar barapesos</div><div class="bubble">Usaste $120. Te quedan $190.</div></div>
+    <div class="wa-step"><div class="when">Saldo por vencer</div><div class="bubble">Tus $190 en barapesos vencen en 7 días.</div></div>
+    <div class="wa-step"><div class="when">Apartado y crédito</div><div class="bubble">Los recordatorios que ya existen.</div></div>
+  </div>
+  <div class="note"><p><strong>El «¿Cómo te quedaron?» importa más de lo que parece:</strong> cuando el cliente contesta, se abren 24 horas en las que se le puede escribir libremente sin costo de plantilla. Quien contesta es un cliente que se puede atender.</p></div>
+
+  <h3>Ofertas, solo a quien aceptó</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Grupo</th><th>Mensaje</th><th>Cuándo</th></tr></thead>
+    <tbody>
+      <tr><td>Compró una marca elegida</td><td>«Llegó lo nuevo de PIRMA, te regresamos 10 %»</td><td>Cuando entra mercancía</td></tr>
+      <tr><td>Compró huarache o sandalia</td><td>«Ya llegaron los huaraches»</td><td>Principios de marzo</td></tr>
+      <tr><td>Compró escolar o Niño / Niña</td><td>Lista de útiles y zapato escolar</td><td>Primera semana de agosto</td></tr>
+      <tr><td>Compró bota o botín</td><td>«Llegó la temporada de botas»</td><td>Principios de noviembre</td></tr>
+      <tr><td>Compró Dama</td><td>Día de la Madre</td><td>Primera semana de mayo</td></tr>
+      <tr><td>Compró Caballero</td><td>Día del Padre</td><td>Semana antes del tercer domingo de junio</td></tr>
+      <tr><td>Compró Niño o Niña</td><td>Reyes y Día del Niño</td><td>Fin de diciembre; última semana de abril</td></tr>
+      <tr><td>Su talla en una mesa de 30 %</td><td>«Hay 12 modelos en tu talla que te regresan 30 %»</td><td>Cuando una mesa se llena</td></tr>
+      <tr><td>No ha regresado en 60–90 días</td><td>«Te regalamos $100 en barapesos, vencen en 15 días»</td><td>Cada semana</td></tr>
+      <tr><td>Cumpleaños</td><td>Barapesos de regalo</td><td>Su mes</td></tr>
+      <tr><td>Todos</td><td>Recordatorio de saldo</td><td>Días 29 y 30, cuando más se vende</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="clean">
+    <li><strong>Un mensaje de oferta por semana</strong> por persona; dos en agosto y diciembre. Los mensajes de su cuenta no cuentan.</li>
+    <li>Cada envío deja fuera al azar al 10 % del grupo. La venta extra es lo que compraron los que recibieron menos lo que compraron los que no.</li>
+    <li>Si alguien pide no recibir más, no se le vuelve a mandar.</li>
+    <li><strong>Cuidar el número es cuidar el programa:</strong> si mucha gente lo bloquea, Meta baja su calidad y se pierde también para verificaciones, apartados y créditos.</li>
+  </ul>
+
+  <h3>Canal de WhatsApp de La Barata</h3>
+  <p>Gratis, sin límite de seguidores y sin plantillas. Llega a quien no se ha registrado y lo empuja a hacerlo. QR en caja, en el ticket, en bolsas y en el aparador.</p>
+  <div class="weekly">
+    <div class="card"><div class="day">Martes</div><p>Lo que llegó en la semana.</p></div>
+    <div class="card"><div class="day">Jueves</div><p>Las mesas de barapesos del día, el día más flojo.</p></div>
+    <div class="card"><div class="day">Viernes</div><p>Lo del fin de semana; en temporada, el tipo de zapato que toca.</p></div>
+    <div class="card"><div class="day">Fechas fuertes</div><p>Un aviso diario la semana anterior.</p></div>
+  </div>
+
+  <h3>Conversaciones y mayoreo</h3>
+  <ul class="clean">
+    <li>Más adelante: anuncios de Facebook e Instagram que abren un chat, preguntas por tallas y apartados. Hoy esto lo atiende otro número, que se mantiene separado del número del sistema.</li>
+    <li>La comunidad de mayoreo sigue como está. El remate de las tiendas se ofrece ahí primero.</li>
+  </ul>
+</section>
+
+<section id="escalera" class="pb">
+  <div class="sec-head"><span class="sec-num">2</span><h2>La escalera de barapesos</h2></div>
+  <p class="intro">Toda la oferta de la tienda se ordena en cinco escalones. En los cuatro primeros, el precio de etiqueta es el de lista.</p>
+  <div class="ladder">
+    <div class="step s1"><div class="pct">10 %</div><h4>Marcas elegidas</h4><p>PIRMA, Flexi y otras que convenga, en temporada. Se ajusta por marca; 15–20 % en temporadas fuertes.</p><div class="tag">Precio de lista</div></div>
+    <div class="step s2"><div class="pct muted">En eventos</div><h4>Temporada</h4><p>El resto, vigente. Solo en días y eventos: jueves, Buen Fin, Reyes, regreso a clases.</p><div class="tag">Precio de lista</div></div>
+    <div class="step s3"><div class="pct">20–25 %</div><h4>Fin de temporada</h4><p>Lo que antes iba a rebaja.</p><div class="tag">Precio de lista</div></div>
+    <div class="step s4"><div class="pct">30–40 %</div><h4>Descontinuado o lento</h4><p>Modelos desactivados con existencia; lo que antes iba a liquidación.</p><div class="tag">Precio de lista</div></div>
+    <div class="step s5"><div class="pct muted">Sin barapesos</div><h4>Remate</h4><p>Lo que ya está en costo o abajo. También va a mayoreo.</p><div class="tag">Precio de remate</div></div>
+  </div>
+
+  <div class="tool">
+    <div class="tool-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h2M14 10h2M8 14h2M14 14h2M8 18h2M14 18h2"/></svg>Cuánto se le regresa al cliente</div>
+    <p class="hint">Escribe el precio de un par y mira lo que diría la etiqueta en cada escalón.</p>
+    <div class="price-in"><span>$</span><input id="precio" type="number" inputmode="numeric" min="50" step="10" value="499" aria-label="Precio del par"></div>
+    <div class="back-list" id="regresos"></div>
+  </div>
+
+  <h3>Reglas</h3>
+  <ul class="clean">
+    <li><strong>Los porcentajes no son fijos:</strong> se ajustan por marca, por temporada y por tienda con lo que se vaya vendiendo.</li>
+    <li><strong>El estado del producto manda sobre la marca:</strong> un PIRMA o un Flexi de fin de temporada o descontinuado recibe el porcentaje de ese escalón, igual que cualquier otra marca. Como las promociones no se suman y a cada par le toca la que da más barapesos, el sistema lo resuelve solo.</li>
+    <li><strong>El escalón sube al final de la temporada, no después:</strong> la bota se empuja en enero, cuando todavía se vende; en marzo ya nadie la busca y ningún porcentaje la mueve.</li>
+    <li><strong>Nunca barapesos sobre remate:</strong> ya está en costo; ahí lo que importa es recuperar el capital.</li>
+    <li><strong>Solo el dinero gana barapesos.</strong> Lo que se paga con barapesos o vales no genera más (el sistema ya lo hace así), y eso impide que se encadenen.</li>
+    <li><strong>Siempre en pesos en la etiqueta y en voz del vendedor:</strong> «Te regresamos $175», no «25 %». En precios bajos los pesos se ven más.</li>
+  </ul>
+
+  <h3>Por qué cuesta menos que rebajar</h3>
+  <div class="cost">
+    <div class="card bad"><div class="big">20 %</div><div class="lbl">Rebaja del 20 %: en dinero, en cada par vendido y ese mismo día</div></div>
+    <div class="card good"><div class="big">≈ 6 %</div><div class="lbl">25 % en barapesos, si se usa la mitad y el margen es de 50 %</div></div>
+  </div>
+  <ul class="clean">
+    <li><strong>Solo cuesta lo que se usa.</strong> Si se usa la mitad, el costo baja a 12.5 %.</li>
+    <li><strong>Se paga con mercancía, no con dinero.</strong> Con un margen de 50 %, $100 en barapesos le cuestan a la tienda $50 de zapato.</li>
+    <li><strong>Y trae otra venta:</strong> el cliente regresa a gastarlos y casi siempre paga algo más.</li>
+  </ul>
+  <p>El número exacto se calcula con el margen real de cada línea y la tasa de uso que veamos en los primeros dos meses.</p>
+
+  <div class="tool">
+    <div class="tool-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Compara con tus números</div>
+    <div class="field"><label for="pb">Barapesos que se dan <b id="pbv"></b></label><input id="pb" type="range" min="5" max="40" step="1" value="25"></div>
+    <div class="field"><label for="uso">Parte que el cliente sí usa <b id="usov"></b></label><input id="uso" type="range" min="10" max="100" step="5" value="50"></div>
+    <div class="field"><label for="mg">Margen de la mercancía con la que se usan <b id="mgv"></b></label><input id="mg" type="range" min="20" max="70" step="5" value="50"></div>
+    <div class="field"><label for="rb">Rebaja con la que se compara <b id="rbv"></b></label><input id="rb" type="range" min="5" max="40" step="1" value="20"></div>
+    <div class="cmp">
+      <div class="box r"><div class="big" id="cr"></div><div class="lbl">cuesta la rebaja, en dinero y ese día</div></div>
+      <div class="box b"><div class="big" id="cb"></div><div class="lbl">cuestan los barapesos, en mercancía y cuando regresa</div></div>
+    </div>
+    <p class="verdict" id="veredicto"></p>
+  </div>
+</section>
+
+<section id="tiendas" class="pb">
+  <div class="sec-head"><span class="sec-num">3</span><h2>Cada zona y cada tienda es distinta</h2></div>
+  <p class="intro">La escalera y el calendario son los mismos para todas, pero los porcentajes, los horarios de promoción, lo que va al frente y la meta de registro se fijan por tienda. Datos de los últimos 12 meses.</p>
+  <div class="zones">
+    <div class="card"><div class="z">Tequisquiapan · T1, T2, T3</div><div class="t">$534</div><div class="z">ticket promedio (lo sube T3)</div></div>
+    <div class="card"><div class="z">San Miguel de Allende · T6, T8</div><div class="t">$401</div><div class="z">ticket promedio</div></div>
+    <div class="card"><div class="z">Comonfort · T4, T5</div><div class="t">$380</div><div class="z">ticket promedio</div></div>
+  </div>
+
+  <div class="tool">
+    <div class="tool-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1-5h16l1 5"/><path d="M4 9v11h16V9"/><path d="M9 20v-6h6v6"/></svg>Elige una tienda</div>
+    <div class="chips" id="tiendas-chips" role="group" aria-label="Tienda"></div>
+    <div id="tienda-out"></div>
+  </div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Tienda</th><th>Zona</th><th class="num">Ticket</th><th class="num">Pares / ticket</th><th class="num">2 pares o más</th><th class="num">Par mediano</th><th class="num">Pares &lt; $300</th><th>Lo que más vende</th><th class="num">Después de 17:00</th></tr></thead>
+    <tbody>
+      <tr><td>T3</td><td>Tequisquiapan</td><td class="num"><div class="bar"><span class="b" style="width:60px"></span>$598</div></td><td class="num">1.57</td><td class="num">35 %</td><td class="num">$334</td><td class="num">40 %</td><td>deportivo, urbano, bota</td><td class="num">28 %</td></tr>
+      <tr><td>T4</td><td>Comonfort</td><td class="num"><div class="bar"><span class="b" style="width:46px"></span>$462</div></td><td class="num">1.38</td><td class="num">26 %</td><td class="num">$305</td><td class="num">49 %</td><td>deportivo, sandalia, escolar</td><td class="num">15 %</td></tr>
+      <tr><td>T6</td><td>San Miguel de Allende</td><td class="num"><div class="bar"><span class="b" style="width:41px"></span>$410</div></td><td class="num">1.30</td><td class="num">23 %</td><td class="num">$309</td><td class="num">47 %</td><td>deportivo, urbano, huarache</td><td class="num">18 %</td></tr>
+      <tr><td>T8</td><td>San Miguel de Allende</td><td class="num"><div class="bar"><span class="b" style="width:39px"></span>$391</div></td><td class="num">1.33</td><td class="num">25 %</td><td class="num">$294</td><td class="num">53 %</td><td>deportivo, urbano, sandalia</td><td class="num">16 %</td></tr>
+      <tr><td>T1</td><td>Tequisquiapan</td><td class="num"><div class="bar"><span class="b" style="width:38px"></span>$379</div></td><td class="num">1.28</td><td class="num">21 %</td><td class="num">$289</td><td class="num">54 %</td><td>sandalia, deportivo, urbano</td><td class="num">24 %</td></tr>
+      <tr><td>T2</td><td>Tequisquiapan</td><td class="num"><div class="bar"><span class="b" style="width:36px"></span>$362</div></td><td class="num">1.24</td><td class="num">19 %</td><td class="num">$249</td><td class="num">62 %</td><td>sandalia, huarache, bota</td><td class="num">25 %</td></tr>
+      <tr><td>T5</td><td>Comonfort</td><td class="num"><div class="bar"><span class="b" style="width:25px"></span>$245</div></td><td class="num">1.24</td><td class="num">18 %</td><td class="num">$127</td><td class="num">75 %</td><td>sandalia (45 %)</td><td class="num">11 %</td></tr>
+    </tbody>
+  </table></div>
+  <p>La temporada es casi igual en las tres zonas: agosto y diciembre arriba, febrero y octubre abajo. Las excepciones: T2 vende más en marzo y abril, y menos en agosto, porque es de sandalia y huarache; T5 tiene su mejor mes en mayo.</p>
+
+  <h3>Lo que cambia por tienda</h3>
+  <div class="grid g2">
+    <div class="card role"><h4>Porcentaje de barapesos</h4><p>En T5 el par mediano cuesta $127: un 10 % son $13 y no mueve a nadie. En T5 y T2 el porcentaje va más alto, o se da un monto fijo en pesos («te regresamos $30»). En T3, con par mediano de $334, el 10 % ya son $33.</p></div>
+    <div class="card role"><h4>El segundo par</h4><p>En T3 el 35 % de las ventas ya lleva dos pares o más; en T5, T2 y T1, menos del 22 %. Ahí va «llévate dos y te regresamos más».</p></div>
+    <div class="card role"><h4>Horario de promoción</h4><p>En T4, T5, T6 y T8 la tarde es floja (11–18 % después de las 17:00): ahí van las «tardes de barapesos». En T1, T2 y T3 la tarde ya vende; ahí el jueves pesa más.</p></div>
+    <div class="card role"><h4>Lo que va al frente</h4><p>T5 y T2 viven de sandalia y huarache: su calendario pesa de marzo a agosto. T3 vende más Caballero (21 %) y bota. T3, T4 y T5 tienen más Niño y Niña (23–26 %): Reyes y regreso a clases pesan más ahí.</p></div>
+    <div class="card role"><h4>Meta de registro por tienda</h4><p>No una sola: T3 hace más de un tercio de las ventas de las tiendas y es donde más clientes se pueden registrar.</p></div>
+    <div class="card role"><h4>WhatsApp por tienda</h4><p>Cada mensaje habla de la tienda donde compró el cliente, y los envíos de temporada se mandan por zona (huarache primero a T2 y T5).</p></div>
+  </div>
+</section>
+
+<section id="piso">
+  <div class="sec-head"><span class="sec-num">4</span><h2>Cómo se ve en la tienda</h2></div>
+  <div class="grid g3">
+    <div class="card role"><h4>Etiqueta</h4><p>Precio y debajo «Te regresamos $175 en barapesos».</p></div>
+    <div class="card role"><h4>Mesas por escalón</h4><p>Con letrero: «Esta mesa te regresa 30 %».</p></div>
+    <div class="card role"><h4>Aparador y mesa de entrada</h4><p>El tipo de zapato de la temporada: huarache en marzo, escolar en agosto, bota en noviembre.</p></div>
+    <div class="card role"><h4>Vendedor</h4><p>Muestra el par diciendo cuánto le regresan y pide el WhatsApp.</p></div>
+    <div class="card role"><h4>Ticket</h4><p>Cuánto ganó, su saldo, cuándo vence y el QR del Canal.</p></div>
+  </div>
+</section>
+
+<section id="temporadas" class="pb">
+  <div class="sec-head"><span class="sec-num">5</span><h2>Temporadas: qué se vende cuándo</h2></div>
+  <p class="intro">Índice por mes, 2024 y 2025: 100 es un mes normal de ese tipo de zapato; 200 es el doble.</p>
+  <div class="legend">
+    <span><i style="background:var(--cool)"></i>Flojo (menos de 80)</span>
+    <span><i style="background:#fff;border:1px solid var(--line)"></i>Normal</span>
+    <span><i style="background:#F6D3DD"></i>Fuerte (120 o más)</span>
+    <span><i style="background:var(--brand)"></i>Pico (200 o más)</span>
+  </div>
+  <p class="hint no-print">Toca un mes para ver qué se vende más y qué menos.</p>
+  <div class="table-wrap"><table class="heat" id="heat">
+    <thead><tr><th>Tipo</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <div class="month-out no-print" id="mes-out" aria-live="polite"></div>
+
+  <div class="grid g2">
+    <div class="card role"><h4>Dos picos y tres valles</h4><p>Agosto (regreso a clases) y diciembre (Navidad y aguinaldo) arriba; febrero, septiembre y octubre abajo.</p></div>
+    <div class="card role"><h4>Huarache y sandalia</h4><p>Huarache es de marzo a julio, con el pico en mayo; de septiembre a febrero casi no se vende. Sandalia dura más: de marzo a agosto.</p></div>
+    <div class="card role"><h4>Escolar</h4><p>Agosto vende más de cuatro veces un mes normal; septiembre todavía aguanta y después se muere.</p></div>
+    <div class="card role"><h4>Bota, bolsa y deportivo</h4><p>Bota y botín, de noviembre a enero, con diciembre en más de tres veces. Bolsa se dispara en diciembre: es regalo. Deportivo sube en enero, agosto y diciembre.</p></div>
+  </div>
+
+  <h3>Los días que más venden en el año</h3>
+  <div class="grid g4">
+    <div class="card kpi"><div class="v">Fin de agosto</div><div class="l">los dos últimos fines de semana; el último domingo vende hasta cinco veces un día normal</div></div>
+    <div class="card kpi"><div class="v">5 de enero</div><div class="l">Reyes</div></div>
+    <div class="card kpi"><div class="v">21–24 dic</div><div class="l">Navidad</div></div>
+    <div class="card kpi"><div class="v">10 de mayo</div><div class="l">y el fin de semana del Día del Niño. El Buen Fin sube el fin de semana un 30 %.</div></div>
+  </div>
+
+  <h3>Cuándo pasa cada tipo a fin de temporada</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Tipo</th><th>Fin de temporada (sube el escalón)</th><th>Lo que quede</th></tr></thead>
+    <tbody>
+      <tr><td>Huarache y sandalia</td><td>Agosto</td><td>Septiembre: descontinuado, remate o mayoreo</td></tr>
+      <tr><td>Escolar</td><td>Septiembre</td><td>Octubre: mayoreo o se guarda para el siguiente agosto</td></tr>
+      <tr><td>Bota y botín</td><td>Enero</td><td>Febrero: descontinuado, remate o mayoreo</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="calendario" class="pb">
+  <div class="sec-head"><span class="sec-num">6</span><h2>Calendario</h2></div>
+  <div class="chips" id="cal-chips" role="group" aria-label="Mes"></div>
+  <div class="cal" id="cal">
+    <div class="cal-item hot"><div class="date">Noviembre<small>antes del Buen Fin · salida del sistema nuevo</small></div><div class="what"><span class="lab">En la tienda</span>Escalera encendida, bono de bienvenida, meta de registro por tienda, Canal abierto.</div><div class="wa"><span class="lab">WhatsApp</span>Bienvenida y mensajes de cuenta desde el primer día.</div></div>
+    <div class="cal-item"><div class="date">Principios de noviembre</div><div class="what"><span class="lab">En la tienda</span>Entra la bota: aparador y mesa de entrada.</div><div class="wa"><span class="lab">WhatsApp</span>Canal: llegaron las botas.</div></div>
+    <div class="cal-item hot"><div class="date">Buen Fin<small>probablemente del 13 al 16 de noviembre; confirmar</small></div><div class="what"><span class="lab">En la tienda</span>Marcas elegidas al 20 %, fin de temporada al 30 %. «Lo que ganas en Buen Fin lo usas en Navidad».</div><div class="wa"><span class="lab">WhatsApp</span>Canal toda la semana; oferta a registrados el jueves antes.</div></div>
+    <div class="cal-item"><div class="date">Días 29 y 30<small>de cada mes</small></div><div class="what"><span class="lab">En la tienda</span>Fin de mes, cuando más se vende.</div><div class="wa"><span class="lab">WhatsApp</span>Recordatorio de saldo.</div></div>
+    <div class="cal-item"><div class="date">Todos los jueves</div><div class="what"><span class="lab">En la tienda</span>10 % en barapesos en temporada, el día más flojo.</div><div class="wa"><span class="lab">WhatsApp</span>Canal: mesas del día.</div></div>
+    <div class="cal-item hot"><div class="date">Diciembre</div><div class="what"><span class="lab">En la tienda</span>Sin rebajas. Bota, bolsa y deportivo al frente. Es el mes con más clientes: el mejor para registrar.</div><div class="wa"><span class="lab">WhatsApp</span>Dos ofertas en el mes; bota y bolsa para regalo.</div></div>
+    <div class="cal-item"><div class="date">21–24 de diciembre</div><div class="what"><span class="lab">En la tienda</span>Los días más fuertes del año.</div><div class="wa"><span class="lab">WhatsApp</span>Aviso de horario y saldo.</div></div>
+    <div class="cal-item"><div class="date">26 dic – 5 ene</div><div class="what"><span class="lab">En la tienda</span>Reyes: Niño, Niña y deportivo.</div><div class="wa"><span class="lab">WhatsApp</span>A quien compró Niño o Niña.</div></div>
+    <div class="cal-item"><div class="date">Enero</div><div class="what"><span class="lab">En la tienda</span>Fin de temporada de bota y botín. «Tus barapesos vencen el 31»: la cuesta de enero se llena con quien viene a usar su saldo.</div><div class="wa"><span class="lab">WhatsApp</span>Saldo por vencer a todos.</div></div>
+    <div class="cal-item"><div class="date">Febrero</div><div class="what"><span class="lab">En la tienda</span>El mes más flojo. Lo que quedó de bota pasa a descontinuado o remate.</div><div class="wa"><span class="lab">WhatsApp</span>Barapesos de regalo a quien no ha regresado.</div></div>
+    <div class="cal-item"><div class="date">Principios de marzo</div><div class="what"><span class="lab">En la tienda</span>Llegan huarache y sandalia.</div><div class="wa"><span class="lab">WhatsApp</span>A quien compró huarache o sandalia; Canal.</div></div>
+    <div class="cal-item"><div class="date">Última semana de abril</div><div class="what"><span class="lab">En la tienda</span>Día del Niño (30 de abril).</div><div class="wa"><span class="lab">WhatsApp</span>A quien compró Niño o Niña.</div></div>
+    <div class="cal-item"><div class="date">1–10 de mayo</div><div class="what"><span class="lab">En la tienda</span>Día de la Madre; mayo es el pico de huarache.</div><div class="wa"><span class="lab">WhatsApp</span>A quien compró Dama.</div></div>
+    <div class="cal-item"><div class="date">Junio</div><div class="what"><span class="lab">En la tienda</span>Día del Padre (tercer domingo): Caballero y bota de trabajo.</div><div class="wa"><span class="lab">WhatsApp</span>A quien compró Caballero.</div></div>
+    <div class="cal-item"><div class="date">Julio</div><div class="what"><span class="lab">En la tienda</span>Vacaciones: sandalia y casual.</div><div class="wa"><span class="lab">WhatsApp</span>Canal.</div></div>
+    <div class="cal-item hot"><div class="date">Agosto</div><div class="what"><span class="lab">En la tienda</span>Regreso a clases, el mejor mes. Escolar, deportivo y Niño / Niña al frente; fin de temporada de huarache y sandalia.</div><div class="wa"><span class="lab">WhatsApp</span>Dos ofertas en el mes; lista de útiles; aviso de horario para los dos últimos fines de semana.</div></div>
+    <div class="cal-item"><div class="date">Septiembre</div><div class="what"><span class="lab">En la tienda</span>Fin de temporada de escolar. Mes flojo.</div><div class="wa"><span class="lab">WhatsApp</span>Barapesos de regalo a quien no ha regresado.</div></div>
+    <div class="cal-item"><div class="date">Octubre</div><div class="what"><span class="lab">En la tienda</span>El otro mes flojo: preparar botas y Buen Fin.</div><div class="wa"><span class="lab">WhatsApp</span>Reactivación; encuesta de tallas.</div></div>
+  </div>
+</section>
+
+<section id="equipo" class="pb">
+  <div class="sec-head"><span class="sec-num">7</span><h2>Quién hace qué</h2></div>
+  <div class="grid g3">
+    <div class="card role"><h4>Dueño del programa</h4><p>Por decidir. Arma los envíos, cambia los escalones y presenta resultados cada lunes.</p></div>
+    <div class="card role"><h4>Compras</h4><p>Cada mes propone qué modelos suben de escalón según la tabla de temporadas. Ya no se proponen rebajas de precio.</p></div>
+    <div class="card role"><h4>Gerentes de tienda</h4><p>Acomodan mesas y aparador por escalón y temporada, y cuidan la meta de registro.</p></div>
+    <div class="card role"><h4>Vendedores y cajeros</h4><p>Guion de barapesos y registro. Se mide por persona.</p></div>
+    <div class="card role"><h4>Diseño</h4><p>Etiquetas, letreros de mesa, QR del Canal e imágenes de cada temporada.</p></div>
+  </div>
+</section>
+
+<section id="medicion">
+  <div class="sec-head"><span class="sec-num">8</span><h2>Cómo se mide</h2></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Indicador</th><th>Hoy</th><th>Meta</th></tr></thead>
+    <tbody>
+      <tr><td>Ventas con cliente registrado</td><td>0 %</td><td>25 % en diciembre, 40 % en marzo</td></tr>
+      <tr><td>Registrados que aceptan ofertas</td><td>—</td><td>60 %</td></tr>
+      <tr><td>Clientes que contestan «¿Cómo te quedaron?»</td><td>—</td><td>Medir el primer mes</td></tr>
+      <tr><td>Barapesos usados ÷ dados</td><td>No se sabe: el sistema anterior registraba el pago como vale, sin folio</td><td>35–50 %</td></tr>
+      <tr><td>Registrados que regresan en 90 días</td><td>—</td><td>Se fija en febrero con la primera base</td></tr>
+      <tr><td>Ticket promedio, por tienda</td><td>De $245 (T5) a $598 (T3)</td><td>+8 % en cada tienda</td></tr>
+      <tr><td>Ventas de 2 pares o más, por tienda</td><td>De 18 % (T5) a 35 % (T3)</td><td>+5 puntos en T1, T2 y T5</td></tr>
+      <tr><td>Venta extra por envío</td><td>—</td><td>Mayor que el costo de barapesos y mensajes (contra el grupo de control)</td></tr>
+      <tr><td>Pares de fin de temporada a precio de lista</td><td>—</td><td>Comparar contra las rebajas del año pasado</td></tr>
+      <tr><td>Calidad del número en Meta</td><td>Verde</td><td>Verde siempre</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="sistema">
+  <div class="sec-head"><span class="sec-num">9</span><h2>Lo que hay que preparar en el sistema</h2></div>
+  <div class="grid g2">
+    <div class="card">
+      <h4 style="margin:0 0 var(--s3);font-size:16px;font-weight:600"><span class="pill">Ya se puede</span></h4>
+      <ul class="clean" style="margin:0">
+        <li>Escalones por marca, por estado de precio o por lista de productos (hasta 500 SKU a la vez).</li>
+        <li>Promociones por tienda, línea, tipo de zapato, día y horario.</li>
+        <li>Jueves de barapesos.</li>
+        <li>Bono de bienvenida.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="margin:0 0 var(--s3);font-size:16px;font-weight:600"><span class="pill todo">Hay que programar, en este orden</span></h4>
+      <ol class="build">
+        <li>Mensajes de su cuenta: al pagar (con saldo y ticket), al usar barapesos y saldo por vencer; saldo y vencimiento en el ticket.</li>
+        <li>«Te regresamos $X» en la etiqueta de precio.</li>
+        <li>Pregunta de ofertas al registrarse y su baja.</li>
+        <li>Envíos por grupo (línea, tipo de zapato, marca, talla y última compra), con grupo de control y tope semanal.</li>
+        <li>Barapesos de regalo con vigencia corta (7–15 días), aparte del saldo normal.</li>
+        <li>Recibir respuestas: «¿Cómo te quedaron?», «saldo» y la baja con botón.</li>
+        <li>Cumpleaños.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="decisiones">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Decisiones pendientes</h2></div>
+  <div class="grid">
+    <div class="card dec"><span class="n">1</span><h4>Marcas elegidas</h4><p>Cuáles, además de PIRMA y Flexi, y el porcentaje con el que empieza cada una.</p></div>
+    <div class="card dec"><span class="n">2</span><h4>Porcentajes de la escalera</h4><p>20–25 % fin de temporada y 30–40 % descontinuado, por tienda, y el margen por línea para calcular su costo real.</p></div>
+    <div class="card dec"><span class="n">3</span><h4>Bono de bienvenida</h4><p>El monto, y si sirve en la misma compra (convierte más) o solo en la siguiente (hace regresar).</p></div>
+    <div class="card dec"><span class="n">4</span><h4>Barapesos impresos del sistema anterior</h4><p>Eran vales al portador con vigencia. Recomendación: respetarlos hasta su fecha, cambiándolos por saldo al registrarse.</p></div>
+    <div class="card dec"><span class="n">5</span><h4>Dueño del programa</h4><p>Quién arma los envíos, ajusta la escalera y presenta resultados cada lunes.</p></div>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="wrap">La Barata · Plan de mercadotecnia, 29 de octubre de 2026.</div></footer>
+
+<script>
+  // Índice por mes (100 = mes normal de ese tipo), 2024 y 2025, tiendas T1–T6 y T8.
+  const filas = [
+    ['g', 'Toda la venta'],
+    ['Todo', [93,70,91,94,113,100,98,145,78,71,87,161]],
+    ['g', 'Por tipo de zapato'],
+    ['Huarache', [36,60,161,170,214,128,127,88,56,44,50,66]],
+    ['Sandalia', [77,76,113,129,130,104,113,122,84,75,81,96]],
+    ['Escolar', [95,65,66,79,69,76,97,434,87,52,44,37]],
+    ['Bota y botín', [97,52,51,46,65,111,80,66,84,92,124,332]],
+    ['Deportivo', [119,83,90,95,102,90,87,146,77,74,92,145]],
+    ['Urbano', [95,77,92,98,115,96,95,128,76,75,95,159]],
+    ['Casual', [91,74,87,89,114,103,122,160,83,70,79,128]],
+    ['Bolsa', [72,79,102,95,91,67,114,117,85,85,75,218]],
+    ['g', 'Por línea'],
+    ['Dama', [82,70,100,106,138,94,101,121,77,71,86,156]],
+    ['Caballero', [91,79,92,93,100,115,101,121,86,81,94,149]],
+    ['Niña', [96,66,101,107,104,105,104,172,69,64,76,135]],
+    ['Niño', [98,65,91,105,101,108,101,203,77,61,75,115]],
+  ];
+  const MESES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  const INI = ['E','F','M','A','M','J','J','A','S','O','N','D'];
+  const $ = (s) => document.querySelector(s);
+  const pesos = (n) => '$' + Math.round(n).toLocaleString('es-MX');
+
+  // Escalera: cuánto se regresa por par
+  const ESCALONES = [
+    { n: 'Marcas elegidas', p: 0.10 },
+    { n: 'Marcas elegidas en temporada fuerte', p: 0.20 },
+    { n: 'Fin de temporada', p: [0.20, 0.25] },
+    { n: 'Descontinuado o lento', p: [0.30, 0.40] },
+    { n: 'Remate', p: 0 },
+  ];
+  function pintaRegresos() {
+    const precio = Math.max(0, Number($('#precio').value) || 0);
+    $('#regresos').innerHTML = ESCALONES.map(e => {
+      if (!e.p) return `<div class="back off"><div class="n">${e.n}</div><div class="a">Sin barapesos</div></div>`;
+      const a = Array.isArray(e.p) ? `${pesos(precio * e.p[0])}–${pesos(precio * e.p[1])}` : pesos(precio * e.p);
+      return `<div class="back"><div class="n">${e.n}</div><div class="a">${a}</div></div>`;
+    }).join('');
+  }
+  $('#precio').addEventListener('input', pintaRegresos);
+  pintaRegresos();
+
+  // Costo: rebaja contra barapesos
+  function pintaCosto() {
+    const pb = +$('#pb').value, uso = +$('#uso').value, mg = +$('#mg').value, rb = +$('#rb').value;
+    $('#pbv').textContent = pb + ' %'; $('#usov').textContent = uso + ' %';
+    $('#mgv').textContent = mg + ' %'; $('#rbv').textContent = rb + ' %';
+    const costo = pb * (uso / 100) * (1 - mg / 100);
+    $('#cr').textContent = rb + ' %';
+    $('#cb').textContent = (Math.round(costo * 10) / 10).toLocaleString('es-MX') + ' %';
+    const veces = costo > 0 ? rb / costo : 0;
+    $('#veredicto').textContent = costo < rb
+      ? `Con estos números, ${pb} % en barapesos cuesta ${veces >= 2 ? Math.floor(veces * 10) / 10 + ' veces menos' : 'menos'} que una rebaja del ${rb} %, y además trae al cliente de regreso.`
+      : `Con estos números, ${pb} % en barapesos cuesta lo mismo o más que una rebaja del ${rb} %: conviene bajar el porcentaje.`;
+  }
+  ['#pb', '#uso', '#mg', '#rb'].forEach(s => $(s).addEventListener('input', pintaCosto));
+  pintaCosto();
+
+  // Tiendas
+  const TIENDAS = {
+    T3: { zona: 'Tequisquiapan', ticket: 598, ppt: 1.57, dos: 35, med: 334, bajo: 40, top: 'deportivo, urbano, bota', tarde: 28, ninos: 25, cab: 21 },
+    T4: { zona: 'Comonfort', ticket: 462, ppt: 1.38, dos: 26, med: 305, bajo: 49, top: 'deportivo, sandalia, escolar', tarde: 15, ninos: 23, cab: 15 },
+    T6: { zona: 'San Miguel de Allende', ticket: 410, ppt: 1.30, dos: 23, med: 309, bajo: 47, top: 'deportivo, urbano, huarache', tarde: 18, ninos: 20, cab: 8 },
+    T8: { zona: 'San Miguel de Allende', ticket: 391, ppt: 1.33, dos: 25, med: 294, bajo: 53, top: 'deportivo, urbano, sandalia', tarde: 16, ninos: 22, cab: 9 },
+    T1: { zona: 'Tequisquiapan', ticket: 379, ppt: 1.28, dos: 21, med: 289, bajo: 54, top: 'sandalia, deportivo, urbano', tarde: 24, ninos: 21, cab: 16 },
+    T2: { zona: 'Tequisquiapan', ticket: 362, ppt: 1.24, dos: 19, med: 249, bajo: 62, top: 'sandalia, huarache, bota', tarde: 25, ninos: 14, cab: 13, verano: 'Vive de sandalia y huarache: su calendario pesa de marzo a agosto; vende más en marzo y abril que el resto.' },
+    T5: { zona: 'Comonfort', ticket: 245, ppt: 1.24, dos: 18, med: 127, bajo: 75, top: 'sandalia (45 % de sus pares)', tarde: 11, ninos: 26, cab: 11, verano: 'Vive de sandalia (45 % de sus pares): su calendario pesa de marzo a agosto y su mejor mes es mayo.' },
+  };
+  function pintaTienda(code) {
+    const t = TIENDAS[code];
+    document.querySelectorAll('#tiendas-chips .chip').forEach(b => b.setAttribute('aria-pressed', b.dataset.t === code));
+    const diez = Math.round(t.med * 0.10);
+    const tips = [];
+    tips.push(diez < 20
+      ? `Un 10 % del par mediano son ${pesos(diez)}: no se nota. Porcentaje más alto o monto fijo en pesos («te regresamos $30»).`
+      : `Un 10 % del par mediano ya son ${pesos(diez)}: se nota en la etiqueta.`);
+    tips.push(t.dos < 22
+      ? `Solo ${t.dos} % de las ventas lleva dos pares o más: va «llévate dos y te regresamos más».`
+      : `${t.dos} % de las ventas ya lleva dos pares o más.`);
+    tips.push(t.tarde < 20
+      ? `La tarde es floja (${t.tarde} % después de las 17:00): «tardes de barapesos».`
+      : `La tarde ya vende (${t.tarde} % después de las 17:00): el jueves es su día de promoción.`);
+    if (t.verano) tips.push(t.verano);
+    if (t.cab >= 20) tips.push(`Vende más Caballero que las demás (${t.cab} % de sus pares): Día del Padre y botas al frente.`);
+    if (t.ninos >= 23) tips.push(`Niño y Niña pesan ${t.ninos} % de sus pares: Reyes y regreso a clases pesan más aquí.`);
+    if (code === 'T3') tips.push('Hace más de un tercio de las ventas de las tiendas: la meta de registro más alta.');
+    $('#tienda-out').innerHTML = `
+      <div class="store-card">
+        <div class="m"><div class="v">${pesos(t.ticket)}</div><div class="l">ticket promedio</div></div>
+        <div class="m"><div class="v">${t.ppt.toFixed(2)}</div><div class="l">pares por ticket</div></div>
+        <div class="m"><div class="v">${pesos(t.med)}</div><div class="l">par mediano</div></div>
+        <div class="m"><div class="v">${t.bajo} %</div><div class="l">pares de menos de $300</div></div>
+      </div>
+      <p class="hint">${code} · ${t.zona} · lo que más vende: ${t.top}</p>
+      <ul class="store-tips">${tips.map(x => `<li>${x}</li>`).join('')}</ul>`;
+  }
+  $('#tiendas-chips').innerHTML = Object.keys(TIENDAS).map(c => `<button class="chip" data-t="${c}" aria-pressed="false">${c}</button>`).join('');
+  $('#tiendas-chips').addEventListener('click', e => { const b = e.target.closest('.chip'); if (b) pintaTienda(b.dataset.t); });
+  pintaTienda('T3');
+
+  function estilo(v) {
+    if (v >= 300) return 'background:#8C1334;color:#fff;font-weight:700';
+    if (v >= 200) return 'background:#B71A45;color:#fff;font-weight:700';
+    if (v >= 150) return 'background:#E7A1B4;color:#221B1E;font-weight:600';
+    if (v >= 120) return 'background:#F6D3DD;color:#221B1E';
+    if (v < 60)  return 'background:#CFDDEE;color:#2F4A66';
+    if (v < 80)  return 'background:#E6EEF7;color:#2F4A66';
+    return 'background:#fff';
+  }
+  $('#heat thead tr').insertAdjacentHTML('beforeend',
+    INI.map((m, i) => `<th class="mh" data-m="${i}" tabindex="0" role="button" aria-label="${MESES[i]}">${m}</th>`).join(''));
+  $('#heat tbody').innerHTML = filas.map(([n, d]) => n === 'g'
+    ? `<tr class="group"><td colspan="13">${d}</td></tr>`
+    : `<tr><td>${n}</td>${d.map((v, i) => `<td data-m="${i}" style="${estilo(v)}">${v}</td>`).join('')}</tr>`
+  ).join('');
+  function pintaMes(i) {
+    document.querySelectorAll('#heat [data-m]').forEach(c => c.classList.toggle('sel', +c.dataset.m === i));
+    const tipos = filas.filter(([n]) => n !== 'g' && n !== 'Todo').map(([n, d]) => [n, d[i]]);
+    const altos = tipos.filter(x => x[1] >= 120).sort((a, b) => b[1] - a[1]).slice(0, 4);
+    const bajos = tipos.filter(x => x[1] < 80).sort((a, b) => a[1] - b[1]).slice(0, 4);
+    const todo = filas.find(([n]) => n === 'Todo')[1][i];
+    const lista = (xs) => xs.map(([n, v]) => `${n} (${v})`).join(', ');
+    $('#mes-out').innerHTML = `<strong>${MESES[i]}</strong>: toda la venta en ${todo}. `
+      + (altos.length ? `Al frente: ${lista(altos)}. ` : 'Ningún tipo arriba de lo normal. ')
+      + (bajos.length ? `Flojo: ${lista(bajos)}.` : '');
+  }
+  $('#heat thead').addEventListener('click', e => { const th = e.target.closest('th.mh'); if (th) pintaMes(+th.dataset.m); });
+  $('#heat thead').addEventListener('keydown', e => { const th = e.target.closest('th.mh'); if (th && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); pintaMes(+th.dataset.m); } });
+  pintaMes(new Date().getMonth());
+
+  // Calendario por mes (mismo orden que las tarjetas)
+  const CAL_MESES = [[10],[10],[10],'*','*',[11],[11],[11,0],[0],[1],[2],[3],[4],[5],[6],[7],[8],[9]];
+  const items = [...document.querySelectorAll('#cal .cal-item')];
+  items.forEach((el, k) => { el.dataset.m = CAL_MESES[k] === '*' ? '*' : CAL_MESES[k].join(','); });
+  const ORDEN = [10, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  $('#cal-chips').innerHTML = `<button class="chip" data-m="all" aria-pressed="true">Todo el año</button>`
+    + ORDEN.map(i => `<button class="chip" data-m="${i}" aria-pressed="false">${MESES[i]}</button>`).join('');
+  $('#cal-chips').addEventListener('click', e => {
+    const b = e.target.closest('.chip'); if (!b) return;
+    document.querySelectorAll('#cal-chips .chip').forEach(x => x.setAttribute('aria-pressed', x === b));
+    items.forEach(el => {
+      el.hidden = !(b.dataset.m === 'all' || el.dataset.m === '*' || el.dataset.m.split(',').includes(b.dataset.m));
+    });
+  });
+
+  // Menú: marca la sección visible
+  const links = [...document.querySelectorAll('.topnav a')];
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      links.forEach(a => {
+        const on = a.getAttribute('href') === '#' + en.target.id;
+        a.classList.toggle('on', on);
+        if (on) { const bar = a.parentElement; bar.scrollTo({ left: a.offsetLeft - bar.clientWidth / 2 + a.clientWidth / 2, behavior: 'smooth' }); }
+      });
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  document.querySelectorAll('main section[id]').forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
