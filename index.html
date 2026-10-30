@@ -665,9 +665,9 @@
     const costo = pb * (uso / 100) * (1 - mg / 100);
     $('#cr').textContent = rb + ' %';
     $('#cb').textContent = (Math.round(costo * 10) / 10).toLocaleString('es-MX') + ' %';
-    const veces = costo > 0 ? rb / costo : 0;
+    const parte = costo > 0 ? Math.round(100 * costo / rb) : 0;
     $('#veredicto').textContent = costo < rb
-      ? `Con estos números, ${pb} % en barapesos cuesta ${veces >= 2 ? Math.floor(veces * 10) / 10 + ' veces menos' : 'menos'} que una rebaja del ${rb} %, y además trae al cliente de regreso.`
+      ? `Con estos números, ${pb} % en barapesos cuesta el ${parte} % de lo que cuesta una rebaja del ${rb} %, y además trae al cliente de regreso.`
       : `Con estos números, ${pb} % en barapesos cuesta lo mismo o más que una rebaja del ${rb} %: conviene bajar el porcentaje.`;
   }
   ['#pb', '#uso', '#mg', '#rb'].forEach(s => $(s).addEventListener('input', pintaCosto));
